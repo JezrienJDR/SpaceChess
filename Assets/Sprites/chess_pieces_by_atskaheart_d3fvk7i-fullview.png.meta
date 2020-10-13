@@ -1,0 +1,430 @@
+fileFormatVersion: 2
+guid: 1aba3c15c32acc640974be40db5ba5d5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8712567659433135449
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_0
+  - first:
+      213: 7679007368016247633
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_1
+  - first:
+      213: 7615153745147424316
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_2
+  - first:
+      213: 1257023946270769712
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_3
+  - first:
+      213: 8031386672539856744
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_4
+  - first:
+      213: 4444941724800510309
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_5
+  - first:
+      213: -7968452872037828072
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_6
+  - first:
+      213: -8443848408116793064
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_7
+  - first:
+      213: -1618482904366857388
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_8
+  - first:
+      213: -2645981595026458921
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_9
+  - first:
+      213: -8657335880295410722
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_10
+  - first:
+      213: 4288202715024115132
+    second: chess_pieces_by_atskaheart_d3fvk7i-fullview_11
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 80
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 107
+        width: 34
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a27ee9ffddb61780800000000000000
+      internalID: -8712567659433135449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 107
+        width: 38
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b373e1480519a60800000000000000
+      internalID: 7679007368016247633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_2
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 107
+        width: 43
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e6f710cf57ea960800000000000000
+      internalID: 7615153745147424316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 107
+        width: 38
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03201af7e98d17110800000000000000
+      internalID: 1257023946270769712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_4
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 107
+        width: 38
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86f6b8660a7357f60800000000000000
+      internalID: 8031386672539856744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_5
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 107
+        width: 38
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569eb0ac2fa9fad30800000000000000
+      internalID: 4444941724800510309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_6
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 34
+        height: 51
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a7eb0e45e5a6190800000000000000
+      internalID: -7968452872037828072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_7
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 18
+        width: 38
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81173f83c9c61da80800000000000000
+      internalID: -8443848408116793064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_8
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 19
+        width: 43
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 453cb22af5ef989e0800000000000000
+      internalID: -1618482904366857388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 19
+        width: 38
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6f93222c5974bd0800000000000000
+      internalID: -2645981595026458921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_10
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 18
+        width: 38
+        height: 66
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed39fb9a2e6fad780800000000000000
+      internalID: -8657335880295410722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: chess_pieces_by_atskaheart_d3fvk7i-fullview_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 18
+        width: 38
+        height: 72
+      alignment: 9
+      pivot: {x: 0.5, y: 0.15}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb5c0e146a1c28b30800000000000000
+      internalID: 4288202715024115132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
