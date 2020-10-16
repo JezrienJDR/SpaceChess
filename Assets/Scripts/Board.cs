@@ -11,6 +11,7 @@ public class Board : MonoBehaviour
     public GameObject blackTile;
 
     public GameObject fleet;
+    public GameObject fleet2;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,7 @@ public class Board : MonoBehaviour
         //transform.Translate(-3.5f, -3.5f, 0);
 
         fleet.GetComponent<Fleet>().Setup();
+        fleet2.GetComponent<Fleet2>().Setup();
     }
 
     // Update is called once per frame

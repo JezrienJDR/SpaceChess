@@ -277,6 +277,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &683650233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 683650235}
+  - component: {fileID: 683650234}
+  m_Layer: 0
+  m_Name: Fleet2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &683650234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683650233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 995d948d52bf09047bbe5da69b646a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawn: {fileID: 5471388809749945792, guid: 3875ebdfe1a21724bad942bb355f4a29, type: 3}
+  pawns: []
+  BishopL: {fileID: 7701433802296702440, guid: ba5c9a6037bde2c488d35971ac9264d0, type: 3}
+  BishopR: {fileID: 7701433802296702440, guid: ba5c9a6037bde2c488d35971ac9264d0, type: 3}
+  RookL: {fileID: 4790647186241760100, guid: 3e89292c3b8f71c42b2df0773ee06a09, type: 3}
+  RookR: {fileID: 4790647186241760100, guid: 3e89292c3b8f71c42b2df0773ee06a09, type: 3}
+  KnightL: {fileID: 3426124301344619246, guid: 46c9824e61b0d004ebf13b785553a2ee, type: 3}
+  KnightR: {fileID: 3426124301344619246, guid: 46c9824e61b0d004ebf13b785553a2ee, type: 3}
+  King: {fileID: 2555642454283216240, guid: 1109a293dec1feb43a94fe6ec013eefb, type: 3}
+  Queen: {fileID: 6810528153108314308, guid: 34f1c7494f8c4524b8ad430b8e8f1575, type: 3}
+  sceneBoard: {fileID: 254198623}
+  board: {fileID: 254198624}
+--- !u!4 &683650235
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 683650233}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6851745367253311710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -292,6 +347,10 @@ PrefabInstance:
       propertyPath: fleet
       value: 
       objectReference: {fileID: 590699359}
+    - target: {fileID: 6851745367439516606, guid: fc94f1c9f13ee0540addcb46e6d6e485, type: 3}
+      propertyPath: fleet2
+      value: 
+      objectReference: {fileID: 683650233}
     - target: {fileID: 6851745367439516607, guid: fc94f1c9f13ee0540addcb46e6d6e485, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
