@@ -1,0 +1,33 @@
+= SPACE CHESS ==
+
+Like regular chess, but in SPAAAAAAAAAAAACE!
+
+(Please ignore the placeholder assets. They will be replaced with cool, thematically
+appropriate spaceships later in the term.)
+
+Networking implementation will be relatively simple. The game is limited to two players,
+obviously. When one player moves a piece, a simple message is sent to the server:
+
+[Tentative.Pseudocode]
+class ChessMessage
+{
+	int pieceMoved;
+	int newXcoordinate;
+	int newYcoordinate;
+}
+
+The server then relays this message to the other player's client, which updates the
+game board accordingly.
+
+The current build (milestone 1) is set up for hotseat-style local multiplayer (two
+players taking turns with the same mouse).
+
+Most of the mechanics of real chess have been implemented. The pieces all move the
+way they're supposed to; pieces can capture enemy pieces; each player's pieces are locked
+(non-clickable) during the other player's turn.
+
+The following major features still need to be implemented:
+	-Check detection
+	-Checkmate detection
+	-Castling
+	
