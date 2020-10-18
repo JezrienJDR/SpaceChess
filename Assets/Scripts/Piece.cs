@@ -14,6 +14,9 @@ public class Piece : MonoBehaviour
 
     public Tile currentTile;
 
+    public bool alive = true;
+    public bool inPlay = true;
+
 
 
     // Start is called before the first frame update
@@ -30,6 +33,16 @@ public class Piece : MonoBehaviour
         
     }
 
+    public void Kill()
+    {
+        board.AddToDead(gameObject);
+        GetComponent<BoardCoordinates>().xPosition = 666;
+        GetComponent<BoardCoordinates>().yPosition = 666;
+
+        alive = false;
+        inPlay = false;
+    }
+
     public virtual void Move()
     {
         ClearTargets();
@@ -40,7 +53,14 @@ public class Piece : MonoBehaviour
 
         currentTile = board.tiles[GetComponent<BoardCoordinates>().xPosition, GetComponent<BoardCoordinates>().yPosition].GetComponent<Tile>();
 
+        if(currentTile.occupier != null)
+        {
+            currentTile.occupier.GetComponent<Piece>().Kill();
+        }
+
         currentTile.occupier = gameObject;
+
+        board.GetComponent<Board>().EndTurn();
     }
 
     public virtual void Target()

@@ -262,6 +262,7 @@ MonoBehaviour:
   King: {fileID: 1253930047066389139, guid: 0979f10e718512d4b80035fde15b0af7, type: 3}
   Queen: {fileID: 5389766868280316061, guid: 8f2c525605dca1149bbfa61bf1cabec5, type: 3}
   sceneBoard: {fileID: 254198623}
+  pieces: []
   board: {fileID: 254198624}
 --- !u!4 &590699361
 Transform:
@@ -318,6 +319,7 @@ MonoBehaviour:
   Queen: {fileID: 6810528153108314308, guid: 34f1c7494f8c4524b8ad430b8e8f1575, type: 3}
   sceneBoard: {fileID: 254198623}
   board: {fileID: 254198624}
+  pieces: []
 --- !u!4 &683650235
 Transform:
   m_ObjectHideFlags: 0
@@ -351,6 +353,14 @@ PrefabInstance:
       propertyPath: fleet2
       value: 
       objectReference: {fileID: 683650233}
+    - target: {fileID: 6851745367439516606, guid: fc94f1c9f13ee0540addcb46e6d6e485, type: 3}
+      propertyPath: yourDeadX
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851745367439516606, guid: fc94f1c9f13ee0540addcb46e6d6e485, type: 3}
+      propertyPath: theirDeadX
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6851745367439516607, guid: fc94f1c9f13ee0540addcb46e6d6e485, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

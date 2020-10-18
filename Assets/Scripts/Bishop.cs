@@ -22,6 +22,11 @@ public class Bishop : Piece
 
     private void OnMouseDown()
     {
+        if (alive == false || inPlay == false)
+        {
+            return;
+        }
+
         selected = !selected;
 
         if (board == null)
@@ -48,12 +53,19 @@ public class Bishop : Piece
 
                 GameObject o = board.tiles[xPosition + i, yPosition + i].GetComponent<Tile>().occupier;
 
+                bool enemyTargeted = false;
+
                 if (o != null)
                 {
-                    if (o.GetComponent<IFF>().friend)
+                    if (o.GetComponent<IFF>().friend == GetComponent<IFF>().friend)
                     {
                         Debug.Log("FRIEND TARGETED!");
                         break;
+                    }
+                    else
+                    {
+                        Debug.Log("ENEMY TARGETED");
+                        enemyTargeted = true;
                     }
                 }
 
@@ -61,6 +73,11 @@ public class Bishop : Piece
                 GameObject t = Instantiate(target, board.tiles[xPosition + i, yPosition + i].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                 t.transform.SetParent(transform);
                 possibleTargets.Add(t);
+
+                if (enemyTargeted)
+                {
+                    break;
+                }
             }
 
             // Southwest
@@ -69,12 +86,19 @@ public class Bishop : Piece
 
                 GameObject o = board.tiles[xPosition - i, yPosition - i].GetComponent<Tile>().occupier;
 
+                bool enemyTargeted = false;
+
                 if (o != null)
                 {
-                    if (o.GetComponent<IFF>().friend)
+                    if (o.GetComponent<IFF>().friend == GetComponent<IFF>().friend)
                     {
                         Debug.Log("FRIEND TARGETED!");
                         break;
+                    }
+                    else
+                    {
+                        Debug.Log("ENEMY TARGETED");
+                        enemyTargeted = true;
                     }
                 }
 
@@ -82,6 +106,11 @@ public class Bishop : Piece
                 GameObject t = Instantiate(target, board.tiles[xPosition - i, yPosition - i].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                 t.transform.SetParent(transform);
                 possibleTargets.Add(t);
+
+                if (enemyTargeted)
+                {
+                    break;
+                }
             }
 
             // Northwest
@@ -90,12 +119,19 @@ public class Bishop : Piece
 
                 GameObject o = board.tiles[xPosition - i, yPosition + i].GetComponent<Tile>().occupier;
 
+                bool enemyTargeted = false;
+
                 if (o != null)
                 {
-                    if (o.GetComponent<IFF>().friend)
+                    if (o.GetComponent<IFF>().friend == GetComponent<IFF>().friend)
                     {
                         Debug.Log("FRIEND TARGETED!");
                         break;
+                    }
+                    else
+                    {
+                        Debug.Log("ENEMY TARGETED");
+                        enemyTargeted = true;
                     }
                 }
 
@@ -103,6 +139,11 @@ public class Bishop : Piece
                 GameObject t = Instantiate(target, board.tiles[xPosition - i, yPosition + i].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                 t.transform.SetParent(transform);
                 possibleTargets.Add(t);
+
+                if (enemyTargeted)
+                {
+                    break;
+                }
             }
 
 
@@ -112,12 +153,19 @@ public class Bishop : Piece
 
                 GameObject o = board.tiles[xPosition + i, yPosition - i].GetComponent<Tile>().occupier;
 
+                bool enemyTargeted = false;
+
                 if (o != null)
                 {
-                    if (o.GetComponent<IFF>().friend)
+                    if (o.GetComponent<IFF>().friend == GetComponent<IFF>().friend)
                     {
                         Debug.Log("FRIEND TARGETED!");
                         break;
+                    }
+                    else
+                    {
+                        Debug.Log("ENEMY TARGETED");
+                        enemyTargeted = true;
                     }
                 }
 
@@ -125,6 +173,11 @@ public class Bishop : Piece
                 GameObject t = Instantiate(target, board.tiles[xPosition + i, yPosition - i].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                 t.transform.SetParent(transform);
                 possibleTargets.Add(t);
+
+                if (enemyTargeted)
+                {
+                    break;
+                }
             }
         }
 

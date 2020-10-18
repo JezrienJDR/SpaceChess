@@ -20,6 +20,11 @@ public class Knight : Piece
 
     private void OnMouseDown()
     {
+        if (alive == false || inPlay == false)
+        {
+            return;
+        }
+
         selected = !selected;
 
         if (board == null)
@@ -36,7 +41,7 @@ public class Knight : Piece
             {
                 GameObject NNE = board.tiles[xPosition + 1, yPosition + 2].GetComponent<Tile>().occupier;
 
-                if (NNE == null || NNE.GetComponent<IFF>().friend == false)
+                if (NNE == null || NNE.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     if (target == null)
                     {
@@ -53,7 +58,7 @@ public class Knight : Piece
             {
                 GameObject ENE = board.tiles[xPosition + 2, yPosition + 1].GetComponent<Tile>().occupier;
 
-                if (ENE == null || ENE.GetComponent<IFF>().friend == false)
+                if (ENE == null || ENE.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition + 2, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -66,7 +71,7 @@ public class Knight : Piece
                 GameObject ESE = board.tiles[xPosition + 2, yPosition - 1].GetComponent<Tile>().occupier;
 
 
-                if (ESE == null || ESE.GetComponent<IFF>().friend == false)
+                if (ESE == null || ESE.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition + 2, yPosition - 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -78,7 +83,7 @@ public class Knight : Piece
             {
                 GameObject SSE = board.tiles[xPosition + 1, yPosition - 2].GetComponent<Tile>().occupier;
 
-                if (SSE == null || SSE.GetComponent<IFF>().friend == false)
+                if (SSE == null || SSE.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition + 1, yPosition - 2].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -90,7 +95,7 @@ public class Knight : Piece
             {
                 GameObject SSW = board.tiles[xPosition -1, yPosition - 2].GetComponent<Tile>().occupier;
 
-                if (SSW == null || SSW.GetComponent<IFF>().friend == false)
+                if (SSW == null || SSW.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 1, yPosition - 2].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -102,7 +107,7 @@ public class Knight : Piece
             {
                 GameObject WSW = board.tiles[xPosition - 2, yPosition - 1].GetComponent<Tile>().occupier;
 
-                if (WSW == null || WSW.GetComponent<IFF>().friend == false)
+                if (WSW == null || WSW.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 2, yPosition - 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -114,7 +119,7 @@ public class Knight : Piece
             {
                 GameObject WNW = board.tiles[xPosition - 2, yPosition + 1].GetComponent<Tile>().occupier;
 
-                if (WNW == null || WNW.GetComponent<IFF>().friend == false)
+                if (WNW == null || WNW.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 2, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -126,7 +131,7 @@ public class Knight : Piece
             {
                 GameObject NNW = board.tiles[xPosition - 1, yPosition + 2].GetComponent<Tile>().occupier;
 
-                if (NNW == null || NNW.GetComponent<IFF>().friend == false)
+                if (NNW == null || NNW.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 1, yPosition + 2].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);

@@ -19,6 +19,9 @@ public class Fleet2 : MonoBehaviour
 
     public Board board;
 
+
+    public List<GameObject> pieces;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +106,14 @@ public class Fleet2 : MonoBehaviour
         Queen.GetComponent<Piece>().currentTile = board.tiles[3, 7].GetComponent<Tile>();
         Queen.GetComponent<Piece>().currentTile.occupier = Queen;
 
+        pieces.Add(King);
+        pieces.Add(Queen);
+        pieces.Add(RookL);
+        pieces.Add(RookR);
+        pieces.Add(BishopL);
+        pieces.Add(BishopR);
+        pieces.Add(KnightL);
+        pieces.Add(KnightR);
 
 
         pawns = new GameObject[8];
@@ -116,6 +127,9 @@ public class Fleet2 : MonoBehaviour
 
             pawns[p].GetComponent<Piece>().currentTile = board.tiles[p, 6].GetComponent<Tile>();
             pawns[p].GetComponent<Piece>().currentTile.occupier = pawns[p];
+
+
+            pieces.Add(pawns[p]);
         }
 
     }

@@ -20,6 +20,12 @@ public class King : Piece
 
     private void OnMouseDown()
     {
+        if (alive == false || inPlay == false)
+        {
+            return;
+        }
+
+
         selected = !selected;
 
         if (board == null)
@@ -36,7 +42,7 @@ public class King : Piece
             {
                 GameObject N = board.tiles[xPosition, yPosition + 1].GetComponent<Tile>().occupier;
 
-                if (N == null || N.GetComponent<IFF>().friend == false)
+                if (N == null || N.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     if(target == null)
                     {
@@ -53,7 +59,7 @@ public class King : Piece
             {
                 GameObject NE = board.tiles[xPosition + 1, yPosition + 1].GetComponent<Tile>().occupier;
 
-                if (NE == null || NE.GetComponent<IFF>().friend == false)
+                if (NE == null || NE.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition + 1, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -66,7 +72,7 @@ public class King : Piece
                 GameObject E = board.tiles[xPosition + 1, yPosition].GetComponent<Tile>().occupier;
 
 
-                if (E == null || E.GetComponent<IFF>().friend == false)
+                if (E == null || E.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition + 1, yPosition].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -78,7 +84,7 @@ public class King : Piece
             {
                 GameObject SE = board.tiles[xPosition + 1, yPosition - 1].GetComponent<Tile>().occupier;
 
-                if (SE == null || SE.GetComponent<IFF>().friend == false)
+                if (SE == null || SE.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition + 1, yPosition - 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -90,7 +96,7 @@ public class King : Piece
             {
                 GameObject S = board.tiles[xPosition, yPosition - 1].GetComponent<Tile>().occupier;
 
-                if (S == null || S.GetComponent<IFF>().friend == false)
+                if (S == null || S.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition, yPosition - 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -102,7 +108,7 @@ public class King : Piece
             {
                 GameObject SW = board.tiles[xPosition - 1, yPosition - 1].GetComponent<Tile>().occupier;
 
-                if (SW == null || SW.GetComponent<IFF>().friend == false)
+                if (SW == null || SW.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 1, yPosition - 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -114,7 +120,7 @@ public class King : Piece
             {
                 GameObject W = board.tiles[xPosition - 1, yPosition].GetComponent<Tile>().occupier;
 
-                if (W == null || W.GetComponent<IFF>().friend == false)
+                if (W == null || W.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 1, yPosition].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -126,7 +132,7 @@ public class King : Piece
             {
                 GameObject NW = board.tiles[xPosition - 1, yPosition + 1].GetComponent<Tile>().occupier;
 
-                if (NW == null || NW.GetComponent<IFF>().friend == false)
+                if (NW == null || NW.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition - 1, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);

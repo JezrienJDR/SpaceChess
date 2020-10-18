@@ -31,6 +31,11 @@ public class Pawn : Piece
 
     private void OnMouseDown()
     {
+        if (alive == false || inPlay == false)
+        {
+            return;
+        }
+
         selected = !selected;
 
         if(board == null)
@@ -48,7 +53,7 @@ public class Pawn : Piece
             {
                 GameObject o = board.tiles[xPosition, yPosition + 1].GetComponent<Tile>().occupier;
 
-                if (o == null || o.GetComponent<IFF>().friend == false)
+                if (o == null )
                 {
                     GameObject t = Instantiate(target, board.tiles[xPosition, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                     t.transform.SetParent(transform);
@@ -59,7 +64,7 @@ public class Pawn : Piece
                     {
                         GameObject p = board.tiles[xPosition, yPosition + 2].GetComponent<Tile>().occupier;
 
-                        if (p == null || p.GetComponent<IFF>().friend == false)
+                        if (p == null )
                         {
                             GameObject t2 = Instantiate(target, board.tiles[xPosition, yPosition + 2].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
                             t2.transform.SetParent(transform);
@@ -68,6 +73,23 @@ public class Pawn : Piece
                     }
                 }
 
+                GameObject oR = board.tiles[xPosition + 1, yPosition + 1].GetComponent<Tile>().occupier;
+
+                if(oR != null && oR.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
+                {
+                    GameObject t3 = Instantiate(target, board.tiles[xPosition + 1, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
+                    t3.transform.SetParent(transform);
+                    possibleTargets.Add(t3);
+                }
+
+                GameObject oL = board.tiles[xPosition - 1, yPosition + 1].GetComponent<Tile>().occupier;
+
+                if (oL != null && oL.GetComponent<IFF>().friend != GetComponent<IFF>().friend)
+                {
+                    GameObject t4 = Instantiate(target, board.tiles[xPosition - 1, yPosition + 1].transform.position + new Vector3(0, 0, -2), new Quaternion(0, 0, 0, 0));
+                    t4.transform.SetParent(transform);
+                    possibleTargets.Add(t4);
+                }
             }
 
         }
