@@ -27,7 +27,7 @@ public class NetworkClient : MonoBehaviour
 
         udp = new UdpClient();
         // 34.229.252.30
-        udp.Connect("54.91.131.245", 12345);
+        udp.Connect("3.15.207.80", 12345);
 
         Byte[] sendBytes = Encoding.ASCII.GetBytes("connect");
 
