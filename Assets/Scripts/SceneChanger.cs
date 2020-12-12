@@ -8,4 +8,18 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+    public void OnBack()
+    {
+        SceneManager.LoadScene("MenuScene");
+    }
+
+    public void SignUp()
+    {
+        SceneManager.LoadScene("PlayerRegScene");
+    }
 }
