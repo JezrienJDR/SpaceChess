@@ -37,8 +37,8 @@ public class NetworkClient : MonoBehaviour
 
         InvokeRepeating("HeartBeat", 1, 1);
 
-        Byte[] sendBytes2 = Encoding.ASCII.GetBytes("spawn");
-        udp.Send(sendBytes2, sendBytes2.Length);
+        //Byte[] sendBytes2 = Encoding.ASCII.GetBytes("spawn");
+        //udp.Send(sendBytes2, sendBytes2.Length);
 
         //cube1 = Instantiate(cube, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
 
