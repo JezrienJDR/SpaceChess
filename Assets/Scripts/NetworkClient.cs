@@ -109,6 +109,7 @@ public class NetworkClient : MonoBehaviour
     [Serializable]
     public class ChessMove
     {
+        string chessMove = "chessMove";
         public int pieceID;
         public int x;
         public int y;
