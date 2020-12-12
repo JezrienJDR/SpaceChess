@@ -17,7 +17,7 @@ public class Piece : MonoBehaviour
     public bool alive = true;
     public bool inPlay = true;
 
-
+    public int pieceID;
 
     // Start is called before the first frame update
     void Start()
@@ -60,7 +60,17 @@ public class Piece : MonoBehaviour
 
         currentTile.occupier = gameObject;
 
+
+        FindObjectOfType<NetworkClient>().SendMove(pieceID, GetComponent<BoardCoordinates>().xPosition, GetComponent<BoardCoordinates>().yPosition);
+
         board.GetComponent<Board>().EndTurn();
+    }
+
+    public void RemoteMove(int x, int y)
+    {
+        Vector3 newPosition = board.GetComponent<Board>().tiles[x, y].transform.position;
+        transform.position = newPosition;
+        Move();
     }
 
     public virtual void Target()

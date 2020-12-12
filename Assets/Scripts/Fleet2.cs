@@ -115,7 +115,17 @@ public class Fleet2 : MonoBehaviour
         pieces.Add(KnightL);
         pieces.Add(KnightR);
 
+        
+        King.GetComponent<Piece>().pieceID = 16;
+        Queen.GetComponent<Piece>().pieceID = 17;
+        RookL.GetComponent<Piece>().pieceID = 18;
+        RookR.GetComponent<Piece>().pieceID = 19;
+        BishopL.GetComponent<Piece>().pieceID = 20;
+        BishopR.GetComponent<Piece>().pieceID = 21;
+        KnightL.GetComponent<Piece>().pieceID = 22;
+        KnightR.GetComponent<Piece>().pieceID = 23;
 
+        
         pawns = new GameObject[8];
 
         for (int p = 0; p < 8; p++)
@@ -128,6 +138,7 @@ public class Fleet2 : MonoBehaviour
             pawns[p].GetComponent<Piece>().currentTile = board.tiles[p, 6].GetComponent<Tile>();
             pawns[p].GetComponent<Piece>().currentTile.occupier = pawns[p];
 
+            pawns[p].GetComponent<Piece>().pieceID = 24 + p;
 
             pieces.Add(pawns[p]);
         }

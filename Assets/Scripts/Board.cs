@@ -105,4 +105,30 @@ public class Board : MonoBehaviour
     {
         
     }
+
+    public Piece GetPieceByID(int id)
+    {
+        foreach (GameObject p in fleet.GetComponent<Fleet>().pieces)
+        {
+            if(p.GetComponent<Piece>().pieceID == id)
+            {
+                return p.GetComponent<Piece>();
+            }
+        }
+
+        foreach (GameObject p in fleet2.GetComponent<Fleet2>().pieces)
+        {
+            if (p.GetComponent<Piece>().pieceID == id)
+            {
+                return p.GetComponent<Piece>();
+            }
+        }
+
+        return null;
+    }
+
+    public void MovePiece(int pieceID, int x, int y)
+    {
+        GetPieceByID(pieceID).RemoteMove(x, y);
+    }
 }

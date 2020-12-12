@@ -105,6 +105,14 @@ public class Fleet : MonoBehaviour
         Queen.GetComponent<Piece>().currentTile = board.tiles[3, 0].GetComponent<Tile>();
         Queen.GetComponent<Piece>().currentTile.occupier = Queen;
 
+        King.GetComponent<Piece>().pieceID = 0;
+        Queen.GetComponent<Piece>().pieceID =1;
+        RookL.GetComponent<Piece>().pieceID =2;
+        RookR.GetComponent<Piece>().pieceID =3;
+        BishopL.GetComponent<Piece>().pieceID =4;
+        BishopR.GetComponent<Piece>().pieceID =5;
+        KnightL.GetComponent<Piece>().pieceID =6;
+        KnightR.GetComponent<Piece>().pieceID =7;
 
         pieces.Add(King);
         pieces.Add(Queen);
@@ -114,6 +122,8 @@ public class Fleet : MonoBehaviour
         pieces.Add(BishopR);
         pieces.Add(KnightL);
         pieces.Add(KnightR);
+
+
 
 
         pawns = new GameObject[8];
@@ -128,8 +138,11 @@ public class Fleet : MonoBehaviour
             pawns[p].GetComponent<Piece>().currentTile = board.tiles[p, 1].GetComponent<Tile>();
             pawns[p].GetComponent<Piece>().currentTile.occupier = pawns[p];
 
+            pawns[p].GetComponent<Piece>().pieceID = 8 + p;
 
             pieces.Add(pawns[p]);
+
+
         }
 
     }
