@@ -68,8 +68,13 @@ public class Piece : MonoBehaviour
 
     public void RemoteMove(int x, int y)
     {
+        Debug.Log("Piece " + pieceID + " moving remotely from " + transform.position );
+
         Vector3 newPosition = board.GetComponent<Board>().tiles[x, y].transform.position;
         transform.position = newPosition;
+
+        Debug.Log("to: " + transform.position);
+
         Move();
     }
 

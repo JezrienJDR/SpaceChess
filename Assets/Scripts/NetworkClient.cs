@@ -24,6 +24,7 @@ public class NetworkClient : MonoBehaviour
     {
 
         board = FindObjectOfType<Board>();
+        om = null;
 
         udp = new UdpClient();
         // 34.229.252.30
@@ -37,10 +38,6 @@ public class NetworkClient : MonoBehaviour
 
         InvokeRepeating("HeartBeat", 1, 1);
 
-        //Byte[] sendBytes2 = Encoding.ASCII.GetBytes("spawn");
-        //udp.Send(sendBytes2, sendBytes2.Length);
-
-        //cube1 = Instantiate(cube, new Vector3(0, 0, 0), new Quaternion(0, 0, 0, 0));
 
     }
 
@@ -109,7 +106,7 @@ public class NetworkClient : MonoBehaviour
     [Serializable]
     public class ChessMove
     {
-        string chessMove = "chessMove";
+        public string chess = "chess";
         public int pieceID;
         public int x;
         public int y;
@@ -125,8 +122,9 @@ public class NetworkClient : MonoBehaviour
     public Message latestMessage;
     public GameState latestGameState;
     public idMessage idm;
-    public ChessMove cm;
+    public ChessMove om;
     public ChessMove sendMove;
+
 
     void OnReceived(IAsyncResult result)
     {
@@ -171,10 +169,12 @@ public class NetworkClient : MonoBehaviour
                 case commands.CHESS_MOVE:
                     Debug.Log("PROCESSING ENEMY MOVE");
 
-                    cm = JsonUtility.FromJson<ChessMove>(returnData);
+                    om = JsonUtility.FromJson<ChessMove>(returnData);
 
-                    board.MovePiece(cm.pieceID, cm.x, cm.y);
+                    Debug.Log("Piece:" + om.pieceID + ", x: " + om.x + ", y: " + om.y);
 
+                    
+                    
                     Debug.Log(clientID);
 
 
@@ -208,6 +208,8 @@ public class NetworkClient : MonoBehaviour
 
     public void SendMove(int _pieceID, int _x, int _y)
     {
+        Debug.Log("Sending move");
+
         sendMove = new ChessMove();
         sendMove.pieceID = _pieceID;
         sendMove.x = _x;
@@ -237,6 +239,11 @@ public class NetworkClient : MonoBehaviour
         //SpawnPlayers();
         //UpdatePlayers();
         //DestroyPlayers();
+        if(om != null)
+        {
+            board.MovePiece(om.pieceID, om.x, om.y);
+            om = null;
+        }
 
     }
 

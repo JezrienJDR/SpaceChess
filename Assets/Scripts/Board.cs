@@ -19,6 +19,8 @@ public class Board : MonoBehaviour
     public float yourDeadX;
     public float theirDeadX;
 
+    public Piece[] pieces;
+
     public bool turn = false;
 
     // Start is called before the first frame update
@@ -48,6 +50,13 @@ public class Board : MonoBehaviour
 
         fleet.GetComponent<Fleet>().Setup();
         fleet2.GetComponent<Fleet2>().Setup();
+
+        pieces = new Piece[32];
+
+        for(int i = 0; i < 32; i++)
+        {
+            pieces[i] = GetPieceByID(i);
+        }
 
         EndTurn();
         EndTurn();
@@ -129,6 +138,6 @@ public class Board : MonoBehaviour
 
     public void MovePiece(int pieceID, int x, int y)
     {
-        GetPieceByID(pieceID).RemoteMove(x, y);
+        pieces[pieceID].RemoteMove(x, y);
     }
 }
