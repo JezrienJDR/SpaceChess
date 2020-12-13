@@ -25,23 +25,32 @@ public class Board : MonoBehaviour
 
     public bool flipped = false;
 
+    public string BorW;
+
     // Start is called before the first frame update
     void Start()
     {
+        
+    }
+
+    public void Begin(string blackOrWhite)
+    {
+        BorW = blackOrWhite;
+
         tiles = new GameObject[8, 8];
 
         for (int i = 0; i < 8; i++)
         {
             for (int j = 0; j < 8; j++)
             {
-                
-                if( (i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
+
+                if ((i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
                 {
-                    tiles[i, j] = Instantiate(whiteTile, transform);                    
+                    tiles[i, j] = Instantiate(whiteTile, transform);
                 }
                 else
                 {
-                    tiles[i, j] = Instantiate(blackTile, transform);                   
+                    tiles[i, j] = Instantiate(blackTile, transform);
                 }
 
                 tiles[i, j].transform.position = new Vector3(i, j, 0);
@@ -57,14 +66,17 @@ public class Board : MonoBehaviour
 
         pieces = new Piece[32];
 
-        for(int i = 0; i < 32; i++)
+        for (int i = 0; i < 32; i++)
         {
             pieces[i] = GetPieceByID(i);
         }
 
-        Flip();
+        if (blackOrWhite == "white")
+        {
+            Flip();
+            EndTurn();
+        }
 
-        EndTurn();
         EndTurn();
     }
 

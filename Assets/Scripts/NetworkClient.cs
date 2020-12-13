@@ -55,7 +55,11 @@ public class NetworkClient : MonoBehaviour
         LOG_IN,
         PLAY_GAME,
         CHESS_MOVE,
-        DISCONNECT
+        DISCONNECT,
+        SOMETHING,
+        SOMETHINGELSE,
+        WHITE,
+        BLACK
 
     };
 
@@ -190,6 +194,15 @@ public class NetworkClient : MonoBehaviour
                 default:
                     Debug.Log("Error");
                     break;
+
+                case commands.BLACK:
+                    FindObjectOfType<SceneChanger>().StartGame("black");
+                    
+                    break;
+                case commands.WHITE:
+                    FindObjectOfType<SceneChanger>().StartGame("white");
+
+                    break;
             }
         }
         catch (Exception e)
@@ -231,6 +244,16 @@ public class NetworkClient : MonoBehaviour
         public float x;
         public float y;
         public float z;
+    }
+
+    public void SignIn(string username, string password)
+    {
+
+    }
+
+    public void SignUp(string username, string password)
+    {
+
     }
 
 

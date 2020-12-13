@@ -2,24 +2,58 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class SceneChanger : MonoBehaviour
 {
-    public void OnPlay()
+
+    public GameObject main;
+    public GameObject signup;
+
+    public InputField mainUsername;
+    public InputField mainPassword;
+
+    public InputField signupUsername;
+    public InputField signupPassword;
+
+    NetworkClient client;
+
+    private void Start()
     {
-        SceneManager.LoadScene("SampleScene");
+        client = FindObjectOfType<NetworkClient>();
     }
 
-    public void StartGame()
+    public void OnPlay()
     {
-        SceneManager.LoadScene("MenuScene");
+        string username = mainUsername.text;
+        string password = mainPassword.text;
+
+        client.SignIn(username, password);
     }
+
+    public void StartGame(string blackOrWhite)
+    {
+        FindObjectOfType<Board>().Begin(blackOrWhite);
+    }
+
     public void OnBack()
     {
-        SceneManager.LoadScene("MenuScene");
+        main.SetActive(true);
+        signup.SetActive(false);
+       
     }
 
     public void SignUp()
     {
-        SceneManager.LoadScene("PlayerRegScene");
+        signup.SetActive(true);
+        main.SetActive(false);
+    }
+
+    public void Register()
+    {
+        string username = signupUsername.text;
+        string password = signupPassword.text;
+
+        client.SignUp(username, password);
     }
 }
