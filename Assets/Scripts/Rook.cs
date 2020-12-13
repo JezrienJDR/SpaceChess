@@ -175,8 +175,9 @@ public class Rook : Piece
     public override void Move()
     {
         base.Move();
-        GetComponent<BoardCoordinates>().xPosition = (int)(transform.position.x + 0.1);
-        GetComponent<BoardCoordinates>().yPosition = (int)(transform.position.y + 0.1);
+        //GameObject NewTile = board.GetNearestTile(transform.position);
+        //GetComponent<BoardCoordinates>().xPosition = NewTile.GetComponent<Tile>().x;
+        //GetComponent<BoardCoordinates>().yPosition = NewTile.GetComponent<Tile>().y;
 
         selected = false;
     }

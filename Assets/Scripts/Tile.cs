@@ -12,7 +12,8 @@ public class Tile : MonoBehaviour
 
     private Sprite sprite;
 
-    
+    public int x;
+    public int y;
 
     // Start is called before the first frame update
     void Start()

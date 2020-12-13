@@ -19,6 +19,8 @@ public class NetworkClient : MonoBehaviour
 
     Board board;
 
+    bool white;
+
     // Start is called before the first frame update
     void Start()
     {

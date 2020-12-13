@@ -23,6 +23,8 @@ public class Board : MonoBehaviour
 
     public bool turn = false;
 
+    public bool flipped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,14 +37,16 @@ public class Board : MonoBehaviour
                 
                 if( (i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
                 {
-                    tiles[i, j] = Instantiate(whiteTile, transform);
+                    tiles[i, j] = Instantiate(whiteTile, transform);                    
                 }
                 else
                 {
-                    tiles[i, j] = Instantiate(blackTile, transform);
+                    tiles[i, j] = Instantiate(blackTile, transform);                   
                 }
 
                 tiles[i, j].transform.position = new Vector3(i, j, 0);
+                tiles[i, j].GetComponent<Tile>().x = i;
+                tiles[i, j].GetComponent<Tile>().y = j;
             }
         }
 
@@ -57,6 +61,8 @@ public class Board : MonoBehaviour
         {
             pieces[i] = GetPieceByID(i);
         }
+
+        Flip();
 
         EndTurn();
         EndTurn();
@@ -75,6 +81,22 @@ public class Board : MonoBehaviour
         {
             theirDead.Add(p);
             p.transform.position = new Vector3(theirDeadX + (theirDead.Count % 2) * 0.2f, 7 - theirDead.Count * 0.5f, theirDead.Count * -0.1f);
+        }
+    }
+
+    public void Flip()
+    {
+        transform.Rotate(new Vector3(0, 0, 180));
+
+        transform.Translate(new Vector3(-7f, -7f, 0));
+
+        foreach (Piece p in pieces)
+        {
+            Vector2 newPos = new Vector2(p.gameObject.GetComponent<BoardCoordinates>().xPosition, p.gameObject.GetComponent<BoardCoordinates>().yPosition);
+            p.gameObject.transform.position = tiles[(int)(newPos.x + 0.1), (int)(newPos.y)].transform.position;
+
+            flipped = true;
+
         }
     }
 
@@ -139,5 +161,27 @@ public class Board : MonoBehaviour
     public void MovePiece(int pieceID, int x, int y)
     {
         pieces[pieceID].RemoteMove(x, y);
+    }
+
+    public GameObject GetNearestTile(Vector3 p)
+    {
+        float bestDistance = 1000000000000.0f;
+        GameObject nearest = null;
+
+        for(int i = 0; i < 8; i++)
+        {
+            for(int j = 0; j < 8; j++)
+            {
+                float distance = Vector3.Distance(p, tiles[i, j].transform.position);
+                if(distance < bestDistance)
+                {
+                    nearest = tiles[i, j];
+                    bestDistance = distance;
+                }
+
+            }
+        }
+
+        return nearest;
     }
 }

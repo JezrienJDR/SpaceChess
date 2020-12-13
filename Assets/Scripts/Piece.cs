@@ -46,8 +46,24 @@ public class Piece : MonoBehaviour
     public virtual void Move()
     {
         ClearTargets();
-        GetComponent<BoardCoordinates>().xPosition = (int)(transform.position.x + 0.1);
-        GetComponent<BoardCoordinates>().yPosition = (int)(transform.position.y + 0.1);
+
+        //if (board.flipped == false)
+        //{
+        //    GetComponent<BoardCoordinates>().xPosition = (int)(transform.position.x + 0.1);
+        //    GetComponent<BoardCoordinates>().yPosition = (int)(transform.position.y + 0.1);
+        //}
+        //else
+        //{
+        //    GetComponent<BoardCoordinates>().xPosition = (int)(transform.position.x + 3.6f);
+        //    GetComponent<BoardCoordinates>().yPosition = (int)(transform.position.y + 3.6f);
+        //}
+
+        GameObject NewTile = board.GetNearestTile(transform.position);
+
+        GetComponent<BoardCoordinates>().xPosition = NewTile.GetComponent<Tile>().x;
+        GetComponent<BoardCoordinates>().yPosition = NewTile.GetComponent<Tile>().y;
+
+        //NewTile.SetActive(false);
 
         currentTile.occupier = null;
 
