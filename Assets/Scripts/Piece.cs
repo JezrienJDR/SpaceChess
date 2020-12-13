@@ -43,6 +43,46 @@ public class Piece : MonoBehaviour
         inPlay = false;
     }
 
+    public virtual void Move(bool placeholder)
+    {
+        ClearTargets();
+
+        //if (board.flipped == false)
+        //{
+        //    GetComponent<BoardCoordinates>().xPosition = (int)(transform.position.x + 0.1);
+        //    GetComponent<BoardCoordinates>().yPosition = (int)(transform.position.y + 0.1);
+        //}
+        //else
+        //{
+        //    GetComponent<BoardCoordinates>().xPosition = (int)(transform.position.x + 3.6f);
+        //    GetComponent<BoardCoordinates>().yPosition = (int)(transform.position.y + 3.6f);
+        //}
+
+        GameObject NewTile = board.GetNearestTile(transform.position);
+
+        GetComponent<BoardCoordinates>().xPosition = NewTile.GetComponent<Tile>().x;
+        GetComponent<BoardCoordinates>().yPosition = NewTile.GetComponent<Tile>().y;
+
+        //NewTile.SetActive(false);
+
+        currentTile.occupier = null;
+
+        currentTile = board.tiles[GetComponent<BoardCoordinates>().xPosition, GetComponent<BoardCoordinates>().yPosition].GetComponent<Tile>();
+
+        if (currentTile.occupier != null)
+        {
+            currentTile.occupier.GetComponent<Piece>().Kill();
+        }
+
+        currentTile.occupier = gameObject;
+
+
+        //FindObjectOfType<NetworkClient>().SendMove(pieceID, GetComponent<BoardCoordinates>().xPosition, GetComponent<BoardCoordinates>().yPosition);
+
+        board.GetComponent<Board>().EndTurn();
+    }
+
+
     public virtual void Move()
     {
         ClearTargets();
@@ -91,7 +131,7 @@ public class Piece : MonoBehaviour
 
         Debug.Log("to: " + transform.position);
 
-        Move();
+        Move(true);
     }
 
     public virtual void Target()
