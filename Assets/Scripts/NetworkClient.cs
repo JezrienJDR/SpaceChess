@@ -21,9 +21,12 @@ public class NetworkClient : MonoBehaviour
 
     bool white;
 
+    SceneChanger SC;
+
     // Start is called before the first frame update
     void Start()
     {
+        SC = FindObjectOfType<SceneChanger>();
 
         board = FindObjectOfType<Board>();
         om = null;
@@ -196,11 +199,13 @@ public class NetworkClient : MonoBehaviour
                     break;
 
                 case commands.BLACK:
-                    FindObjectOfType<SceneChanger>().StartGame("black");
+                    Debug.Log("GAME STARTING!");
+                    SC.StartGame("black");
                     
                     break;
                 case commands.WHITE:
-                    FindObjectOfType<SceneChanger>().StartGame("white");
+                    Debug.Log("GAME STARTING!");
+                    SC.StartGame("white");
 
                     break;
             }

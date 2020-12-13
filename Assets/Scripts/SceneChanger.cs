@@ -17,10 +17,12 @@ public class SceneChanger : MonoBehaviour
     public InputField signupPassword;
 
     NetworkClient client;
+    Board board;
 
     private void Start()
     {
         client = FindObjectOfType<NetworkClient>();
+        board = FindObjectOfType<Board>();
     }
 
     public void OnPlay()
@@ -35,7 +37,7 @@ public class SceneChanger : MonoBehaviour
     {
         main.SetActive(false);
         signup.SetActive(false);
-        FindObjectOfType<Board>().Begin(blackOrWhite);
+        board.Begin(blackOrWhite);
     }
 
     public void OnBack()
