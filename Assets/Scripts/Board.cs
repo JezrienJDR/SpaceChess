@@ -27,6 +27,8 @@ public class Board : MonoBehaviour
 
     public string BorW;
 
+    bool started = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,49 +37,56 @@ public class Board : MonoBehaviour
 
     public void Begin(string blackOrWhite)
     {
-        BorW = blackOrWhite;
-
-        tiles = new GameObject[8, 8];
-
-        for (int i = 0; i < 8; i++)
+        if (started == false)
         {
-            for (int j = 0; j < 8; j++)
+
+
+            started = true;
+
+            BorW = blackOrWhite;
+
+            tiles = new GameObject[8, 8];
+
+            for (int i = 0; i < 8; i++)
             {
-
-                if ((i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
+                for (int j = 0; j < 8; j++)
                 {
-                    tiles[i, j] = Instantiate(whiteTile, transform);
-                }
-                else
-                {
-                    tiles[i, j] = Instantiate(blackTile, transform);
-                }
 
-                tiles[i, j].transform.position = new Vector3(i, j, 0);
-                tiles[i, j].GetComponent<Tile>().x = i;
-                tiles[i, j].GetComponent<Tile>().y = j;
+                    if ((i % 2 == 0 && j % 2 != 0) || (i % 2 != 0 && j % 2 == 0))
+                    {
+                        tiles[i, j] = Instantiate(whiteTile, transform);
+                    }
+                    else
+                    {
+                        tiles[i, j] = Instantiate(blackTile, transform);
+                    }
+
+                    tiles[i, j].transform.position = new Vector3(i, j, 0);
+                    tiles[i, j].GetComponent<Tile>().x = i;
+                    tiles[i, j].GetComponent<Tile>().y = j;
+                }
             }
-        }
 
-        //transform.Translate(-3.5f, -3.5f, 0);
+            //transform.Translate(-3.5f, -3.5f, 0);
 
-        fleet.GetComponent<Fleet>().Setup();
-        fleet2.GetComponent<Fleet2>().Setup();
+            fleet.GetComponent<Fleet>().Setup();
+            fleet2.GetComponent<Fleet2>().Setup();
 
-        pieces = new Piece[32];
+            pieces = new Piece[32];
 
-        for (int i = 0; i < 32; i++)
-        {
-            pieces[i] = GetPieceByID(i);
-        }
+            for (int i = 0; i < 32; i++)
+            {
+                pieces[i] = GetPieceByID(i);
+            }
 
-        if (blackOrWhite == "white")
-        {
-            Flip();
+            if (blackOrWhite == "white")
+            {
+                Flip();
+                EndTurn();
+            }
+
             EndTurn();
         }
-
-        EndTurn();
     }
 
     public void AddToDead(GameObject p)

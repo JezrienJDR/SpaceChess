@@ -314,6 +314,7 @@ public class NetworkClient : MonoBehaviour
         if(BorW != null)
         {
             SC.StartGame(BorW);
+            BorW = null;
         }
 
     }
