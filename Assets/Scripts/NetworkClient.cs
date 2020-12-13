@@ -23,6 +23,8 @@ public class NetworkClient : MonoBehaviour
 
     SceneChanger SC;
 
+    string BorW = null;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -200,12 +202,14 @@ public class NetworkClient : MonoBehaviour
 
                 case commands.BLACK:
                     Debug.Log("GAME STARTING!");
-                    SC.StartGame("black");
-                    
+                    //SC.StartGame("black");
+                    BorW = "black";
+
                     break;
                 case commands.WHITE:
                     Debug.Log("GAME STARTING!");
-                    SC.StartGame("white");
+                    //SC.StartGame("white");
+                    BorW = "white";
 
                     break;
             }
@@ -305,6 +309,11 @@ public class NetworkClient : MonoBehaviour
         {
             board.MovePiece(om.pieceID, om.x, om.y);
             om = null;
+        }
+
+        if(BorW != null)
+        {
+            SC.StartGame(BorW);
         }
 
     }
