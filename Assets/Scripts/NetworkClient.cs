@@ -257,7 +257,7 @@ public class NetworkClient : MonoBehaviour
     [Serializable]
     public class SignUpMessage
     {
-        public string signin = "signup";
+        public string signup = "signup";
         public string username;
         public string password;
     }
