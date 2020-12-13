@@ -33,6 +33,8 @@ public class SceneChanger : MonoBehaviour
 
     public void StartGame(string blackOrWhite)
     {
+        main.SetActive(false);
+        signup.SetActive(false);
         FindObjectOfType<Board>().Begin(blackOrWhite);
     }
 

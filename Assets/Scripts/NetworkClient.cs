@@ -246,14 +246,46 @@ public class NetworkClient : MonoBehaviour
         public float z;
     }
 
+    [Serializable]
+    public class SignInMessage
+    {
+        public string signin = "signin";
+        public string username;
+        public string password;
+    }
+
+    [Serializable]
+    public class SignUpMessage
+    {
+        public string signin = "signup";
+        public string username;
+        public string password;
+    }
+
+
     public void SignIn(string username, string password)
     {
+        SignInMessage m = new SignInMessage();
+        m.username = username;
+        m.password = password;
+
+        string s = JsonUtility.ToJson(m);
+
+        Byte[] sendBytes = Encoding.ASCII.GetBytes(s);
+        udp.Send(sendBytes, sendBytes.Length);
 
     }
 
     public void SignUp(string username, string password)
     {
+        SignUpMessage m = new SignUpMessage();
+        m.username = username;
+        m.password = password;
 
+        string s = JsonUtility.ToJson(m);
+
+        Byte[] sendBytes = Encoding.ASCII.GetBytes(s);
+        udp.Send(sendBytes, sendBytes.Length);
     }
 
 
