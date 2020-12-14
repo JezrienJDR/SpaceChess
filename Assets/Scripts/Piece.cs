@@ -33,7 +33,7 @@ public class Piece : MonoBehaviour
         
     }
 
-    public void Kill()
+    public virtual void Kill()
     {
         board.AddToDead(gameObject);
         GetComponent<BoardCoordinates>().xPosition = 666;

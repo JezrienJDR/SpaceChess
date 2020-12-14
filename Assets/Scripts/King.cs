@@ -159,4 +159,16 @@ public class King : Piece
 
         selected = false;
     }
+
+    public override void Kill()
+    {
+        board.AddToDead(gameObject);
+        GetComponent<BoardCoordinates>().xPosition = 666;
+        GetComponent<BoardCoordinates>().yPosition = 666;
+
+        alive = false;
+        inPlay = false;
+
+        Debug.Log("KING DEAD!");
+    }
 }

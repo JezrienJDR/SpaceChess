@@ -64,7 +64,9 @@ public class NetworkClient : MonoBehaviour
         SOMETHING,
         SOMETHINGELSE,
         WHITE,
-        BLACK
+        BLACK,
+        LOSE,
+        WIN
 
     };
 
@@ -212,6 +214,17 @@ public class NetworkClient : MonoBehaviour
                     BorW = "white";
 
                     break;
+                case commands.LOSE:
+                    Debug.Log("YOU LOSE!");
+                   
+                    BorW = "black";
+
+                    break;
+                case commands.WIN:
+                    Debug.Log("YOU WIN!");
+                   
+
+                    break;
             }
         }
         catch (Exception e)
@@ -297,6 +310,11 @@ public class NetworkClient : MonoBehaviour
         udp.Send(sendBytes, sendBytes.Length);
     }
 
+    public void KingDead()
+    {
+        Byte[] sendBytes = Encoding.ASCII.GetBytes("KingDead");
+        udp.Send(sendBytes, sendBytes.Length);
+    }
 
 
     void Update()

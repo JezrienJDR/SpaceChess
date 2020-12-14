@@ -125,7 +125,7 @@ public class Board : MonoBehaviour
 
     public void MyTurn()
     {
-        if (BorW == "white")
+        if (BorW == "black")
         {
             foreach (GameObject g in fleet.GetComponent<Fleet>().pieces)
             {
@@ -137,7 +137,7 @@ public class Board : MonoBehaviour
                 g.GetComponent<Piece>().ClearTargets();
             }
         }
-        else if (BorW == "black")
+        else if (BorW == "white")
         {
             foreach (GameObject g in fleet.GetComponent<Fleet>().pieces)
             {
