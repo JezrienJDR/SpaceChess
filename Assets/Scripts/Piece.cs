@@ -119,7 +119,7 @@ public class Piece : MonoBehaviour
 
         FindObjectOfType<NetworkClient>().SendMove(pieceID, GetComponent<BoardCoordinates>().xPosition, GetComponent<BoardCoordinates>().yPosition);
 
-        board.GetComponent<Board>().EndTurn();
+        board.GetComponent<Board>().EndMyTurn();
     }
 
     public void RemoteMove(int x, int y)

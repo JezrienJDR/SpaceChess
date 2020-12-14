@@ -82,10 +82,12 @@ public class Board : MonoBehaviour
             if (blackOrWhite == "white")
             {
                 Flip();
-                EndTurn();
+                MyTurn();
             }
-
-            EndTurn();
+            else
+            {
+                EndMyTurn();
+            }
         }
     }
 
@@ -119,6 +121,51 @@ public class Board : MonoBehaviour
             flipped = true;
 
         }
+    }
+
+    public void MyTurn()
+    {
+        if (BorW == "white")
+        {
+            foreach (GameObject g in fleet.GetComponent<Fleet>().pieces)
+            {
+                g.GetComponent<Piece>().inPlay = true;
+            }
+            foreach (GameObject g in fleet2.GetComponent<Fleet2>().pieces)
+            {
+                g.GetComponent<Piece>().inPlay = false;
+                g.GetComponent<Piece>().ClearTargets();
+            }
+        }
+        else if (BorW == "black")
+        {
+            foreach (GameObject g in fleet.GetComponent<Fleet>().pieces)
+            {
+                g.GetComponent<Piece>().inPlay = false;
+                g.GetComponent<Piece>().ClearTargets();
+            }
+            foreach (GameObject g in fleet2.GetComponent<Fleet2>().pieces)
+            {
+                g.GetComponent<Piece>().inPlay = true;
+            }
+        }
+    }
+
+    public void EndMyTurn()
+    {
+
+        foreach (GameObject g in fleet2.GetComponent<Fleet2>().pieces)
+        {
+            g.GetComponent<Piece>().inPlay = false;
+            g.GetComponent<Piece>().ClearTargets();
+        }
+
+        foreach (GameObject g in fleet.GetComponent<Fleet>().pieces)
+        {
+            g.GetComponent<Piece>().inPlay = false;
+            g.GetComponent<Piece>().ClearTargets();
+        }
+
     }
 
     public void EndTurn()
@@ -182,6 +229,8 @@ public class Board : MonoBehaviour
     public void MovePiece(int pieceID, int x, int y)
     {
         pieces[pieceID].RemoteMove(x, y);
+
+        MyTurn();
     }
 
     public GameObject GetNearestTile(Vector3 p)

@@ -305,6 +305,7 @@ public class NetworkClient : MonoBehaviour
         //SpawnPlayers();
         //UpdatePlayers();
         //DestroyPlayers();
+
         if(om != null)
         {
             board.MovePiece(om.pieceID, om.x, om.y);
