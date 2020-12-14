@@ -169,6 +169,8 @@ public class King : Piece
         alive = false;
         inPlay = false;
 
+        FindObjectOfType<NetworkClient>().KingDead();
+
         Debug.Log("KING DEAD!");
     }
 }
