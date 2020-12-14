@@ -25,6 +25,8 @@ public class NetworkClient : MonoBehaviour
 
     string BorW = null;
 
+    bool gameOver = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -216,13 +218,15 @@ public class NetworkClient : MonoBehaviour
                     break;
                 case commands.LOSE:
                     Debug.Log("YOU LOSE!");
-                   
-                    BorW = "black";
 
+                    gameOver = true;
+                    
                     break;
                 case commands.WIN:
                     Debug.Log("YOU WIN!");
-                   
+
+                    gameOver = true;
+
 
                     break;
             }
@@ -334,6 +338,11 @@ public class NetworkClient : MonoBehaviour
         {
             SC.StartGame(BorW);
             BorW = null;
+        }
+
+        if(gameOver == true)
+        {
+            Application.Quit();
         }
 
     }
